@@ -1,62 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using CleanCodeWorkshops.Data;
 using CleanCodeWorkshops.Models;
 
-namespace CleanCodeWorkshops.ComplexMethod
+namespace CleanCodeWorkshops.Services
 {
-    public class BooksService
+    public class BooksService : IBooksService
     {
         public void BorrowBook(string title)
         {
             var books = BooksRepository.GetBooks();
 
+            ListAvailableBooks(books);
+
+            books.Where(b => b.Title.Contains(title))
+                .ToList()
+                .ForEach(BorrowBook);
+
+            ListAvailableBooks(books);
+        }
+
+        public void ListAuthors()
+        {
+            var books = BooksRepository.GetBooks();
+
+            var authors = books.GroupBy(b => b.Author)
+                .Select(items => new Author
+                {
+                    Name = items.Key,
+                    Books = items.ToList()
+                })
+                .ToList();
+
+            ListAuthors(authors);
+        }
+
+        private void BorrowBook(Book book)
+        {
+            if (BookCanBeBorrowed(book))
+            {
+                book.IsBorrowed = true;
+                BookedBorrowedInfo(book);
+            }
+        }
+
+        private void ListAvailableBooks(IList<Book> books)
+        {
             Console.WriteLine("----Books Available:----");
             Console.WriteLine("");
-            foreach (var book in books)
+            foreach (var book in books.Where(b => !b.IsBorrowed))
             {
-                if (book.IsBorrowed)
-                {
-                    continue;
-                }
-
-                Console.WriteLine("Title: " + book.Title);
-                Console.WriteLine("Author: " + book.Author);
-                Console.WriteLine("Is borrowed: " + book.IsBorrowed);
-                Console.WriteLine("Burrowed no.: " + book.BorrowedCount);
-                Console.WriteLine("");
-            }
-
-            foreach (var book in books)
-            {
-                if (book.Title.Contains(title))
-                {
-                    if (book.IsBorrowed)
-                    {
-                        Console.WriteLine("Book already borrowed!");
-                        Console.WriteLine("");
-                    }
-
-                    book.IsBorrowed = true;
-                    book.BorrowedCount++;
-                    Console.WriteLine("Book was borrowed:");
-                    Console.WriteLine("Title: " + book.Title);
-                    Console.WriteLine("Author: " + book.Author);
-                    Console.WriteLine("");
-                }
-            }
-
-            Console.WriteLine("----Books Available:----");
-            Console.WriteLine("");
-            foreach (var book in books)
-            {
-                if (book.IsBorrowed)
-                {
-                    continue;
-                }
-
                 Console.WriteLine("Title: " + book.Title);
                 Console.WriteLine("Author: " + book.Author);
                 Console.WriteLine("Is borrowed: " + book.IsBorrowed);
@@ -65,28 +59,25 @@ namespace CleanCodeWorkshops.ComplexMethod
             }
         }
 
-        public void ListAuthors()
+        private bool BookCanBeBorrowed(Book book)
         {
-            var books = BooksRepository.GetBooks();
+            if (!book.IsBorrowed) return true;
 
-            var authors = new List<Author>();
+            Console.WriteLine("Book already borrowed!");
+            Console.WriteLine("");
+            return false;
+        }
 
-            foreach (var book in books)
-            {
-                var bookAuthor = authors.FirstOrDefault(a => a.Name.Equals(book.Author));
+        private void BookedBorrowedInfo(Book book)
+        {
+            Console.WriteLine("Book was borrowed:");
+            Console.WriteLine("Title: " + book.Title);
+            Console.WriteLine("Author: " + book.Author);
+            Console.WriteLine("");
+        }
 
-                if (bookAuthor == null)
-                {
-                    bookAuthor = new Author();
-                    bookAuthor.Name = book.Author;
-                    bookAuthor.Books = new List<Book>();
-
-                    authors.Add(bookAuthor);
-                }
-
-                bookAuthor.Books.Add(book);
-            }
-
+        private void ListAuthors(IList<Author> authors)
+        {
             foreach (var author in authors)
             {
                 Console.WriteLine("---Authors---");

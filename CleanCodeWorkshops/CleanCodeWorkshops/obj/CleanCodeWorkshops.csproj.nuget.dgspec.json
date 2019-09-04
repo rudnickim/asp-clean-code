@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\trainings\\clean-code\\asp-clean-code\\CleanCodeWorkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj": {}
+    "C:\\git\\trainings\\clean-code\\asp-clean-code\\cleancodeworkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj": {}
   },
   "projects": {
-    "C:\\git\\trainings\\clean-code\\asp-clean-code\\CleanCodeWorkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj": {
+    "C:\\git\\trainings\\clean-code\\asp-clean-code\\cleancodeworkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\trainings\\clean-code\\asp-clean-code\\CleanCodeWorkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj",
+        "projectUniqueName": "C:\\git\\trainings\\clean-code\\asp-clean-code\\cleancodeworkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj",
         "projectName": "CleanCodeWorkshops",
-        "projectPath": "C:\\git\\trainings\\clean-code\\asp-clean-code\\CleanCodeWorkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj",
+        "projectPath": "C:\\git\\trainings\\clean-code\\asp-clean-code\\cleancodeworkshops\\CleanCodeWorkshops\\CleanCodeWorkshops.csproj",
         "packagesPath": "C:\\Users\\maciej.rudnicki\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\trainings\\clean-code\\asp-clean-code\\CleanCodeWorkshops\\CleanCodeWorkshops\\obj\\",
+        "outputPath": "C:\\git\\trainings\\clean-code\\asp-clean-code\\cleancodeworkshops\\CleanCodeWorkshops\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.NETCore.App": {
               "target": "Package",
               "version": "[2.1.0, )",

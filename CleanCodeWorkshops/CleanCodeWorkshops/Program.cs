@@ -1,5 +1,7 @@
 ﻿using System;
-using CleanCodeWorkshops.ComplexMethod;
+using System.Security.Authentication.ExtendedProtection;
+using CleanCodeWorkshops.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanCodeWorkshops
 {
@@ -7,7 +9,11 @@ namespace CleanCodeWorkshops
     {
         static void Main(string[] args)
         {
-            var bookService = new BooksService();
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IBooksService, BooksService>()
+                .BuildServiceProvider();
+
+            var bookService = serviceProvider.GetService<IBooksService>();
 
             bookService.BorrowBook("Dziady");
             bookService.ListAuthors();

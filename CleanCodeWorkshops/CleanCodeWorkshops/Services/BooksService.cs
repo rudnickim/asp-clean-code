@@ -25,6 +25,7 @@ namespace CleanCodeWorkshops.ComplexMethod
                 Console.WriteLine("Title: " + book.Title);
                 Console.WriteLine("Author: " + book.Author);
                 Console.WriteLine("Is borrowed: " + book.IsBorrowed);
+                Console.WriteLine("Burrowed no.: " + book.BorrowedCount);
                 Console.WriteLine("");
             }
 
@@ -39,6 +40,7 @@ namespace CleanCodeWorkshops.ComplexMethod
                     }
 
                     book.IsBorrowed = true;
+                    book.BorrowedCount++;
                     Console.WriteLine("Book was borrowed:");
                     Console.WriteLine("Title: " + book.Title);
                     Console.WriteLine("Author: " + book.Author);
@@ -58,6 +60,7 @@ namespace CleanCodeWorkshops.ComplexMethod
                 Console.WriteLine("Title: " + book.Title);
                 Console.WriteLine("Author: " + book.Author);
                 Console.WriteLine("Is borrowed: " + book.IsBorrowed);
+                Console.WriteLine("Burrowed no.: " + book.BorrowedCount);
                 Console.WriteLine("");
             }
         }

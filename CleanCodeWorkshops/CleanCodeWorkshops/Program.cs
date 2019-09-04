@@ -10,6 +10,8 @@ namespace CleanCodeWorkshops
             var bookService = new BooksService();
 
             bookService.BorrowBook("Dziady");
+            bookService.ListAuthors();
+
 
             Console.ReadLine();
         }

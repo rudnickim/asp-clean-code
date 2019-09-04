@@ -33,7 +33,14 @@ namespace CleanCodeWorkshops.Data
                     Title = "Kordian",
                     Id = Guid.NewGuid(),
                     IsBorrowed = false
-                }
+                },
+                new Book
+                {
+                    Author = "Adam Mickiewicz",
+                    Title = "Pan Tadeusz",
+                    Id = Guid.NewGuid(),
+                    IsBorrowed = false
+                },
             }.ToList();
         }
     }

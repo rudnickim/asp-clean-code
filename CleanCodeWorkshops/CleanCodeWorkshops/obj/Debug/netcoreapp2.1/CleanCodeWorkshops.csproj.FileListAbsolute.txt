@@ -1,0 +1,11 @@
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\bin\Debug\netcoreapp2.1\CleanCodeWorkshops.deps.json
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\bin\Debug\netcoreapp2.1\CleanCodeWorkshops.runtimeconfig.json
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\bin\Debug\netcoreapp2.1\CleanCodeWorkshops.runtimeconfig.dev.json
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\bin\Debug\netcoreapp2.1\CleanCodeWorkshops.dll
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\bin\Debug\netcoreapp2.1\CleanCodeWorkshops.pdb
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.csprojAssemblyReference.cache
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.csproj.CoreCompileInputs.cache
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.AssemblyInfoInputs.cache
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.AssemblyInfo.cs
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.dll
+C:\git\trainings\clean-code\asp-clean-code\CleanCodeWorkshops\CleanCodeWorkshops\obj\Debug\netcoreapp2.1\CleanCodeWorkshops.pdb
